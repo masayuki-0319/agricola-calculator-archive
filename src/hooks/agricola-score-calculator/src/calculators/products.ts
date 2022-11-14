@@ -1,5 +1,5 @@
 import { ScoreCoefficient, scoreGenerator } from '../util/scoreCofficient';
-import { ProductResource } from './../types';
+import { ProductResource } from '../types';
 
 type Product = 'grain' | 'vegetables' | 'sheep' | 'wildBoar' | 'cattle';
 const GRAIN_SCORE_UNIT = [0, 1, 4, 6, 7];
