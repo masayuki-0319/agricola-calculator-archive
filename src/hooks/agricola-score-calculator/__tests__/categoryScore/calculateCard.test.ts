@@ -1,4 +1,4 @@
-import { calculateCard } from '../src/calculateResource';
+import { calculateCard } from '../../src/calculators/categoryScore';
 
 describe('Core test calculateCard', () => {
   describe('Fine:', () => {
