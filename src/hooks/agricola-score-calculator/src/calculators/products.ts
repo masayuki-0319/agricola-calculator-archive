@@ -1,5 +1,6 @@
 import { ScoreCoefficient, scoreGenerator } from '../util/scoreCofficient';
 import { ProductResource } from '../types';
+import { validateNumber } from '../util/validateNumber';
 
 type Product = 'grain' | 'vegetables' | 'sheep' | 'wildBoar' | 'cattle';
 const GRAIN_SCORE_UNIT = [0, 1, 4, 6, 7];
@@ -17,6 +18,7 @@ const PRODUCTS_COEFFICIENT: { [P in Product]: ScoreCoefficient } = {
 };
 
 function calcProduct(resultCount: number, product: Product) {
+  validateNumber(resultCount);
   const coefficient = PRODUCTS_COEFFICIENT[product];
 
   if (resultCount >= coefficient['score5']['resultCount']) {

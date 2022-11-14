@@ -1,4 +1,5 @@
 import { FamilyResource } from '../types';
+import { validateNumber } from '../util/validateNumber';
 
 const FAMILY_COEFFICIENT = {
   room: {
@@ -12,6 +13,10 @@ const FAMILY_COEFFICIENT = {
 
 export function calcFamily(family: FamilyResource): number {
   const { room, familyMember, beggingCard } = family;
+
+  validateNumber(room.count);
+  validateNumber(familyMember);
+  validateNumber(beggingCard);
 
   const roomScore = FAMILY_COEFFICIENT.room[room.type] * room.count;
   const familyMemberScore = FAMILY_COEFFICIENT.familyMember * familyMember;

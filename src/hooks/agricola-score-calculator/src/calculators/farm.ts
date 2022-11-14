@@ -1,23 +1,32 @@
 import { FarmResource } from '../types';
 import { ScoreCoefficient, scoreGenerator } from '../util/scoreCofficient';
+import { validateNumber } from '../util/validateNumber';
 
-function calcField(field: number) {
+export function calcField(field: number) {
   const result = calcFarm(field, 'field');
+
   return result;
 }
 
-function calcPastures(pastures: number) {
+export function calcPastures(pastures: number) {
   const result = calcFarm(pastures, 'pastures');
+
   return result;
 }
 
-function calcEmtpyFamyard(emtpyFamyard: number) {
+export function calcEmtpyFamyard(emtpyFamyard: number) {
+  validateNumber(emtpyFamyard);
+
   const result = emtpyFamyard * -1;
+
   return result;
 }
 
-function calcFancedStable(fancedStable: number) {
+export function calcFancedStable(fancedStable: number) {
+  validateNumber(fancedStable);
+
   const result = fancedStable * 1;
+
   return result;
 }
 
@@ -31,6 +40,7 @@ const FARM_COEFFICIENT: { [P in Farm]: ScoreCoefficient } = {
 };
 
 function calcFarm(resultCount: number, farm: Farm) {
+  validateNumber(resultCount);
   const coefficient = FARM_COEFFICIENT[farm];
 
   if (resultCount >= coefficient['score5']['resultCount']) {
