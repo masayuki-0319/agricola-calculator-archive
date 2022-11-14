@@ -1,4 +1,9 @@
-import { calcCard, calcFamily, calcFarms, calcProducts } from './calculators';
+import {
+  calcCard,
+  calcFamily,
+  calcFarms,
+  calcProducts,
+} from './calculateResource';
 import { ScoreResource } from './types';
 
 export function calculateResult(scoreResource: ScoreResource): number {
