@@ -1,2 +1,1 @@
-export * from './calculateResource';
-export * from './calculateResult';
+export * from './calculators';

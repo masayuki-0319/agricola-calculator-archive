@@ -1,20 +1,19 @@
-import { FarmResource } from '../types';
-import { ScoreCoefficient, scoreGenerator } from '../util/scoreCofficient';
-import { validateNumber } from '../util/validateNumber';
+import { ScoreCoefficient, scoreGenerator } from '../../util/scoreCofficient';
+import { validateNumber } from '../../util/validateNumber';
 
-export function calcField(field: number) {
-  const result = calcFarm(field, 'field');
-
-  return result;
-}
-
-export function calcPastures(pastures: number) {
-  const result = calcFarm(pastures, 'pastures');
+export function calculateField(field: number) {
+  const result = calculateFarm(field, 'field');
 
   return result;
 }
 
-export function calcEmtpyFamyard(emtpyFamyard: number) {
+export function calculatePastures(pastures: number) {
+  const result = calculateFarm(pastures, 'pastures');
+
+  return result;
+}
+
+export function calculateEmtpyFamyard(emtpyFamyard: number) {
   validateNumber(emtpyFamyard);
 
   const result = emtpyFamyard * -1;
@@ -22,7 +21,7 @@ export function calcEmtpyFamyard(emtpyFamyard: number) {
   return result;
 }
 
-export function calcFancedStable(fancedStable: number) {
+export function calculateFancedStable(fancedStable: number) {
   validateNumber(fancedStable);
 
   const result = fancedStable * 1;
@@ -39,7 +38,7 @@ const FARM_COEFFICIENT: { [P in Farm]: ScoreCoefficient } = {
   pastures: scoreGenerator(PASTURES_UNIT),
 };
 
-function calcFarm(resultCount: number, farm: Farm) {
+function calculateFarm(resultCount: number, farm: Farm) {
   validateNumber(resultCount);
   const coefficient = FARM_COEFFICIENT[farm];
 
@@ -56,16 +55,4 @@ function calcFarm(resultCount: number, farm: Farm) {
   } else {
     throw new Error('負の数は入力不可です');
   }
-}
-
-export function calcFarms(farm: FarmResource): number {
-  const { field, pastures, emtpyFamyard, fancedStable } = farm;
-
-  const result =
-    calcField(field) +
-    calcPastures(pastures) +
-    calcEmtpyFamyard(emtpyFamyard) +
-    calcFancedStable(fancedStable);
-
-  return result;
 }

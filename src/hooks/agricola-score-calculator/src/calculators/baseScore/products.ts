@@ -1,6 +1,5 @@
-import { ScoreCoefficient, scoreGenerator } from '../util/scoreCofficient';
-import { ProductResource } from '../types';
-import { validateNumber } from '../util/validateNumber';
+import { ScoreCoefficient, scoreGenerator } from '../../util/scoreCofficient';
+import { validateNumber } from '../../util/validateNumber';
 
 type Product = 'grain' | 'vegetables' | 'sheep' | 'wildBoar' | 'cattle';
 const GRAIN_SCORE_UNIT = [0, 1, 4, 6, 7];
@@ -17,7 +16,7 @@ const PRODUCTS_COEFFICIENT: { [P in Product]: ScoreCoefficient } = {
   cattle: scoreGenerator(CATTLE_SCORE_UNIT),
 };
 
-function calcProduct(resultCount: number, product: Product) {
+function _calculateProducts(resultCount: number, product: Product) {
   validateNumber(resultCount);
   const coefficient = PRODUCTS_COEFFICIENT[product];
 
@@ -32,19 +31,36 @@ function calcProduct(resultCount: number, product: Product) {
   } else if (resultCount === coefficient['score1']['resultCount']) {
     return coefficient['score1']['scorePoint'];
   } else {
-    throw new Error('負の数は入力不可です');
+    throw new Error();
   }
 }
 
-export function calcProducts(products: ProductResource): number {
-  const { grain, vegetables, sheep, wildBoar, cattle } = products;
+export function calculateGrain(grain: number) {
+  const result = _calculateProducts(grain, 'grain');
 
-  const result =
-    calcProduct(grain, 'grain') +
-    calcProduct(vegetables, 'vegetables') +
-    calcProduct(sheep, 'sheep') +
-    calcProduct(wildBoar, 'wildBoar') +
-    calcProduct(cattle, 'cattle');
+  return result;
+}
+
+export function calculateVegetables(vegetables: number) {
+  const result = _calculateProducts(vegetables, 'vegetables');
+
+  return result;
+}
+
+export function calculateSheep(sheep: number) {
+  const result = _calculateProducts(sheep, 'sheep');
+
+  return result;
+}
+
+export function calculateWildBoar(wildBoar: number) {
+  const result = _calculateProducts(wildBoar, 'wildBoar');
+
+  return result;
+}
+
+export function calculateCattle(cattle: number) {
+  const result = _calculateProducts(cattle, 'cattle');
 
   return result;
 }

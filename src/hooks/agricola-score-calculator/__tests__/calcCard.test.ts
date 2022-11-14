@@ -1,11 +1,11 @@
-import { calcCard } from '../src/calculateResource';
+import { calculateCard } from '../src/calculateResource';
 
-describe('Core test calcCard', () => {
+describe('Core test calculateCard', () => {
   describe('Fine:', () => {
     test('basic', () => {
       const fineInput = { basePoint: 1, endBonus: 1 };
 
-      expect(calcCard(fineInput)).toBe(2);
+      expect(calculateCard(fineInput)).toBe(2);
     });
   });
 
@@ -13,13 +13,13 @@ describe('Core test calcCard', () => {
     test('basePoint is negative integer', () => {
       const badInput = { basePoint: -1, endBonus: 1 };
 
-      expect(() => calcCard(badInput)).toThrowError(Error);
+      expect(() => calculateCard(badInput)).toThrowError(Error);
     });
 
     test('endBonus is float integer', () => {
       const badInput = { basePoint: 1, endBonus: 0.1 };
 
-      expect(() => calcCard(badInput)).toThrowError(Error);
+      expect(() => calculateCard(badInput)).toThrowError(Error);
     });
   });
 });
