@@ -1,4 +1,8 @@
-import { ScoreCoefficient, scoreGenerator } from '../../util/scoreCofficient';
+import {
+  CoefficientResource,
+  ScoreCoefficient,
+  scoreGenerator,
+} from '../../util/scoreCofficient';
 import { validateNumber } from '../../util/validateNumber';
 
 export function calculateField(field: number) {
@@ -30,8 +34,8 @@ export function calculateFancedStable(fancedStable: number) {
 }
 
 type Farm = 'field' | 'pastures';
-const FIELD_UNIT = [1, 2, 3, 4, 5];
-const PASTURES_UNIT = [0, 1, 2, 3, 4];
+const FIELD_UNIT: CoefficientResource = [1, 2, 3, 4, 5];
+const PASTURES_UNIT: CoefficientResource = [0, 1, 2, 3, 4];
 
 const FARM_COEFFICIENT: { [P in Farm]: ScoreCoefficient } = {
   field: scoreGenerator(FIELD_UNIT),
@@ -52,7 +56,5 @@ function calculateFarm(resultCount: number, farm: Farm) {
     return coefficient['score2']['scorePoint'];
   } else if (resultCount <= coefficient['score1']['resultCount']) {
     return coefficient['score1']['scorePoint'];
-  } else {
-    throw new Error();
   }
 }

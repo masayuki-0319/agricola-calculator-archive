@@ -21,7 +21,11 @@ export type ScoreCoefficient = {
   };
 };
 
-export function scoreGenerator(scoreCoefficients: number[]): ScoreCoefficient {
+export type CoefficientResource = [number, number, number, number, number];
+
+export function scoreGenerator(
+  scoreCoefficients: CoefficientResource
+): ScoreCoefficient {
   return {
     score1: {
       resultCount: scoreCoefficients[0],
