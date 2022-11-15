@@ -5,7 +5,6 @@ import {
 } from '../../src/calculators/baseScore';
 import { FamilyResource } from '../../src/types';
 import { baseScoreTest } from '../util/baseScoreTestModule';
-import { validateNumberTestModule } from '../util/validateNumberTestModule';
 
 describe('Test baseScore', () => {
   describe('calculateRoom:', () => {
@@ -43,9 +42,23 @@ describe('Test baseScore', () => {
       });
     });
 
-    // describe('[Bad]', () => {
-    //   validateNumberTestModule(testFunction);
-    // });
+    describe('[Bad]', () => {
+      test('cannot input negative integer', () => {
+        const badCase = -1;
+
+        expect(() =>
+          testFunction({ type: 'cray', count: badCase })
+        ).toThrowError(Error);
+      });
+
+      test('cannot input float integer', () => {
+        const badCase = 1.5;
+
+        expect(() =>
+          testFunction({ type: 'cray', count: badCase })
+        ).toThrowError(Error);
+      });
+    });
   });
 
   describe('calculateFamilyMember:', () => {

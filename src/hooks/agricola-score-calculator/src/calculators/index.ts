@@ -1,3 +1,3 @@
 export * from './allScore/calculateAllScore';
-export * from './calculateBaseScore';
-export * from './calculateCategoryScore';
+export * from './categoryScore';
+export * from './baseScore';
