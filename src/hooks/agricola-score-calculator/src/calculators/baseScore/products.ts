@@ -3,9 +3,9 @@ import { validateNumber } from '../../util/validateNumber';
 
 type Product = 'grain' | 'vegetables' | 'sheep' | 'wildBoar' | 'cattle';
 const GRAIN_SCORE_UNIT = [0, 1, 4, 6, 7];
-const VEGITABLES_SCORE_UNIT = [0, 1, 4, 6, 7];
-const SHEEP_SCORE_UNIT = [0, 1, 4, 6, 7];
-const WILD_BOAR_SCORE_UNIT = [0, 1, 4, 6, 7];
+const VEGITABLES_SCORE_UNIT = [0, 1, 2, 3, 4];
+const SHEEP_SCORE_UNIT = [0, 1, 4, 6, 8];
+const WILD_BOAR_SCORE_UNIT = [0, 1, 3, 5, 7];
 const CATTLE_SCORE_UNIT = [0, 1, 2, 4, 6];
 
 const PRODUCTS_COEFFICIENT: { [P in Product]: ScoreCoefficient } = {
@@ -21,13 +21,13 @@ function _calculateProducts(resultCount: number, product: Product) {
   const coefficient = PRODUCTS_COEFFICIENT[product];
 
   if (resultCount >= coefficient['score5']['resultCount']) {
-    return resultCount * coefficient['score5']['scorePoint'];
+    return coefficient['score5']['scorePoint'];
   } else if (resultCount >= coefficient['score4']['resultCount']) {
-    return resultCount * coefficient['score4']['scorePoint'];
+    return coefficient['score4']['scorePoint'];
   } else if (resultCount >= coefficient['score3']['resultCount']) {
-    return resultCount * coefficient['score3']['scorePoint'];
+    return coefficient['score3']['scorePoint'];
   } else if (resultCount >= coefficient['score2']['resultCount']) {
-    return resultCount * coefficient['score2']['scorePoint'];
+    return coefficient['score2']['scorePoint'];
   } else if (resultCount === coefficient['score1']['resultCount']) {
     return coefficient['score1']['scorePoint'];
   } else {

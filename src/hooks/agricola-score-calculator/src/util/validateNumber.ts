@@ -7,5 +7,5 @@ export function validateNumber(number: number) {
     throw new Error('[Error] Input only integer number.');
   }
 
-  return;
+  return null;
 }
