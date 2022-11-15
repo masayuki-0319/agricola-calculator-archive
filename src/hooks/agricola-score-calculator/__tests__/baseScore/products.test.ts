@@ -1,236 +1,194 @@
 import {
-  calculateCattle,
   calculateGrain,
-  calculateSheep,
   calculateVegetables,
+  calculateSheep,
   calculateWildBoar,
-} from '../../src';
-import { singleParametersTest } from '../util/singleParametersTestModule';
-import { validateNumberTestModule } from '../util/validateNumberTestModule';
+  calculateCattle,
+} from '../../src/calculators/baseScore';
+import { baseScoreTest } from '../util/baseScoreTestModule';
 
 describe('Test baseScore', () => {
   describe('calculateGrain:', () => {
-    function testFunction() {
-      return calculateGrain;
-    }
+    const testFunction = calculateGrain;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 0,
-          expected: -1,
-        },
-        {
-          input: 1,
-          expected: 1,
-        },
-        {
-          input: 2,
-          expected: 1,
-        },
-        {
-          input: 4,
-          expected: 2,
-        },
-        {
-          input: 5,
-          expected: 2,
-        },
-        {
-          input: 6,
-          expected: 3,
-        },
-        {
-          input: 7,
-          expected: 4,
-        },
-        {
-          input: 9,
-          expected: 4,
-        },
-      ];
+    const testCases = [
+      {
+        input: 0,
+        expected: -1,
+      },
+      {
+        input: 1,
+        expected: 1,
+      },
+      {
+        input: 2,
+        expected: 1,
+      },
+      {
+        input: 4,
+        expected: 2,
+      },
+      {
+        input: 5,
+        expected: 2,
+      },
+      {
+        input: 6,
+        expected: 3,
+      },
+      {
+        input: 7,
+        expected: 4,
+      },
+      {
+        input: 9,
+        expected: 4,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 
   describe('calculateVegetables:', () => {
-    function testFunction() {
-      return calculateVegetables;
-    }
+    const testFunction = calculateVegetables;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 0,
-          expected: -1,
-        },
-        {
-          input: 1,
-          expected: 1,
-        },
-        {
-          input: 2,
-          expected: 2,
-        },
-        {
-          input: 3,
-          expected: 3,
-        },
-        {
-          input: 4,
-          expected: 4,
-        },
-        {
-          input: 5,
-          expected: 4,
-        },
-      ];
+    const testCases = [
+      {
+        input: 0,
+        expected: -1,
+      },
+      {
+        input: 1,
+        expected: 1,
+      },
+      {
+        input: 2,
+        expected: 2,
+      },
+      {
+        input: 3,
+        expected: 3,
+      },
+      {
+        input: 4,
+        expected: 4,
+      },
+      {
+        input: 5,
+        expected: 4,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 
   describe('calculateSheep:', () => {
-    function testFunction() {
-      return calculateSheep;
-    }
+    const testFunction = calculateSheep;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 0,
-          expected: -1,
-        },
-        {
-          input: 1,
-          expected: 1,
-        },
-        {
-          input: 2,
-          expected: 1,
-        },
-        {
-          input: 4,
-          expected: 2,
-        },
-        {
-          input: 5,
-          expected: 2,
-        },
-        {
-          input: 6,
-          expected: 3,
-        },
-        {
-          input: 7,
-          expected: 3,
-        },
-        {
-          input: 8,
-          expected: 4,
-        },
-      ];
-
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    const testCases = [
+      {
+        input: 0,
+        expected: -1,
+      },
+      {
+        input: 1,
+        expected: 1,
+      },
+      {
+        input: 2,
+        expected: 1,
+      },
+      {
+        input: 4,
+        expected: 2,
+      },
+      {
+        input: 5,
+        expected: 2,
+      },
+      {
+        input: 6,
+        expected: 3,
+      },
+      {
+        input: 7,
+        expected: 3,
+      },
+      {
+        input: 8,
+        expected: 4,
+      },
+    ];
+    baseScoreTest(testFunction, testCases);
   });
 
   describe('calculateWildBoar:', () => {
-    function testFunction() {
-      return calculateWildBoar;
-    }
+    const testFunction = calculateWildBoar;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 0,
-          expected: -1,
-        },
-        {
-          input: 1,
-          expected: 1,
-        },
-        {
-          input: 2,
-          expected: 1,
-        },
-        {
-          input: 3,
-          expected: 2,
-        },
-        {
-          input: 5,
-          expected: 3,
-        },
-        {
-          input: 7,
-          expected: 4,
-        },
-      ];
+    const testCases = [
+      {
+        input: 0,
+        expected: -1,
+      },
+      {
+        input: 1,
+        expected: 1,
+      },
+      {
+        input: 2,
+        expected: 1,
+      },
+      {
+        input: 3,
+        expected: 2,
+      },
+      {
+        input: 5,
+        expected: 3,
+      },
+      {
+        input: 7,
+        expected: 4,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 
   describe('calculateCattle:', () => {
-    function testFunction() {
-      return calculateCattle;
-    }
+    const testFunction = calculateCattle;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 0,
-          expected: -1,
-        },
-        {
-          input: 1,
-          expected: 1,
-        },
-        {
-          input: 2,
-          expected: 2,
-        },
-        {
-          input: 3,
-          expected: 2,
-        },
-        {
-          input: 4,
-          expected: 3,
-        },
-        {
-          input: 5,
-          expected: 3,
-        },
-        {
-          input: 6,
-          expected: 4,
-        },
-      ];
+    const testCases = [
+      {
+        input: 0,
+        expected: -1,
+      },
+      {
+        input: 1,
+        expected: 1,
+      },
+      {
+        input: 2,
+        expected: 2,
+      },
+      {
+        input: 3,
+        expected: 2,
+      },
+      {
+        input: 4,
+        expected: 3,
+      },
+      {
+        input: 5,
+        expected: 3,
+      },
+      {
+        input: 6,
+        expected: 4,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 });

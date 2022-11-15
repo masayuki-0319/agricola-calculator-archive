@@ -1,138 +1,105 @@
 import {
-  calculateEmtpyFamyard,
-  calculateFancedStable,
   calculateField,
   calculatePastures,
-} from '../../src';
-import { singleParametersTest } from '../util/singleParametersTestModule';
-import { validateNumberTestModule } from '../util/validateNumberTestModule';
+  calculateEmtpyFamyard,
+  calculateFancedStable,
+} from '../../src/calculators/baseScore';
+import { baseScoreTest } from '../util/baseScoreTestModule';
 
 describe('Test baseScore', () => {
   describe('calculateField:', () => {
-    function testFunction() {
-      return calculateField;
-    }
+    const testFunction = calculateField;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 0,
-          expected: -1,
-        },
-        {
-          input: 1,
-          expected: -1,
-        },
-        {
-          input: 2,
-          expected: 1,
-        },
-        {
-          input: 3,
-          expected: 2,
-        },
-        {
-          input: 4,
-          expected: 3,
-        },
-        {
-          input: 5,
-          expected: 4,
-        },
-      ];
+    const testCases = [
+      {
+        input: 0,
+        expected: -1,
+      },
+      {
+        input: 1,
+        expected: -1,
+      },
+      {
+        input: 2,
+        expected: 1,
+      },
+      {
+        input: 3,
+        expected: 2,
+      },
+      {
+        input: 4,
+        expected: 3,
+      },
+      {
+        input: 5,
+        expected: 4,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 
   describe('calculatePastures:', () => {
-    function testFunction() {
-      return calculatePastures;
-    }
+    const testFunction = calculatePastures;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 0,
-          expected: -1,
-        },
-        {
-          input: 1,
-          expected: 1,
-        },
-        {
-          input: 2,
-          expected: 2,
-        },
-        {
-          input: 3,
-          expected: 3,
-        },
-        {
-          input: 4,
-          expected: 4,
-        },
-      ];
+    const testCases = [
+      {
+        input: 0,
+        expected: -1,
+      },
+      {
+        input: 1,
+        expected: 1,
+      },
+      {
+        input: 2,
+        expected: 2,
+      },
+      {
+        input: 3,
+        expected: 3,
+      },
+      {
+        input: 4,
+        expected: 4,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 
   describe('calculateEmtpyFamyard:', () => {
-    function testFunction() {
-      return calculateEmtpyFamyard;
-    }
+    const testFunction = calculateEmtpyFamyard;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 1,
-          expected: -1,
-        },
-        {
-          input: 5,
-          expected: -5,
-        },
-      ];
+    const testCases = [
+      {
+        input: 1,
+        expected: -1,
+      },
+      {
+        input: 5,
+        expected: -5,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 
   describe('calculateFancedStable:', () => {
-    function testFunction() {
-      return calculateFancedStable;
-    }
+    const testFunction = calculateFancedStable;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 1,
-          expected: 1,
-        },
-        {
-          input: 5,
-          expected: 5,
-        },
-      ];
+    const testCases = [
+      {
+        input: 1,
+        expected: 1,
+      },
+      {
+        input: 5,
+        expected: 5,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 });

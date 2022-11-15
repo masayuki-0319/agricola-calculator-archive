@@ -56,5 +56,7 @@ function calculateFarm(resultCount: number, farm: Farm) {
     return coefficient['score2']['scorePoint'];
   } else if (resultCount <= coefficient['score1']['resultCount']) {
     return coefficient['score1']['scorePoint'];
+  } else {
+    throw new Error();
   }
 }

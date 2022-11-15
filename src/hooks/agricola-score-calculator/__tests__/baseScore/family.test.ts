@@ -1,17 +1,15 @@
 import {
-  calculateBeggingCard,
-  calculateFamilyMember,
   calculateRoom,
-} from '../../src';
+  calculateFamilyMember,
+  calculateBeggingCard,
+} from '../../src/calculators/baseScore';
 import { FamilyResource } from '../../src/types';
-import { singleParametersTest } from '../util/singleParametersTestModule';
+import { baseScoreTest } from '../util/baseScoreTestModule';
 import { validateNumberTestModule } from '../util/validateNumberTestModule';
 
 describe('Test baseScore', () => {
   describe('calculateRoom:', () => {
-    function testFunction() {
-      return calculateRoom;
-    }
+    const testFunction = calculateRoom;
 
     describe('[Fine]', () => {
       test('case 1', () => {
@@ -21,7 +19,7 @@ describe('Test baseScore', () => {
         };
         const expectedOutput = 0;
 
-        expect(testFunction()(fineInput)).toBe(expectedOutput);
+        expect(testFunction(fineInput)).toBe(expectedOutput);
       });
 
       test('case 2', () => {
@@ -31,7 +29,7 @@ describe('Test baseScore', () => {
         };
         const expectedOutput = 3;
 
-        expect(testFunction()(fineInput)).toBe(expectedOutput);
+        expect(testFunction(fineInput)).toBe(expectedOutput);
       });
 
       test('case 3', () => {
@@ -41,62 +39,46 @@ describe('Test baseScore', () => {
         };
         const expectedOutput = 8;
 
-        expect(testFunction()(fineInput)).toBe(expectedOutput);
+        expect(testFunction(fineInput)).toBe(expectedOutput);
       });
     });
 
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    // describe('[Bad]', () => {
+    //   validateNumberTestModule(testFunction);
+    // });
   });
 
   describe('calculateFamilyMember:', () => {
-    function testFunction() {
-      return calculateFamilyMember;
-    }
+    const testFunction = calculateFamilyMember;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 2,
-          expected: 6,
-        },
-        {
-          input: 3,
-          expected: 9,
-        },
-      ];
+    const testCases = [
+      {
+        input: 2,
+        expected: 6,
+      },
+      {
+        input: 3,
+        expected: 9,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 
   describe('calculateBeggingCard:', () => {
-    function testFunction() {
-      return calculateBeggingCard;
-    }
+    const testFunction = calculateBeggingCard;
 
-    describe('[Fine]', () => {
-      const testCases = [
-        {
-          input: 1,
-          expected: -3,
-        },
-        {
-          input: 2,
-          expected: -6,
-        },
-      ];
+    const testCases = [
+      {
+        input: 1,
+        expected: -3,
+      },
+      {
+        input: 2,
+        expected: -6,
+      },
+    ];
 
-      singleParametersTest(testFunction(), testCases);
-    });
-
-    describe('[Bad]', () => {
-      validateNumberTestModule(testFunction());
-    });
+    baseScoreTest(testFunction, testCases);
   });
 });

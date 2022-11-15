@@ -1,4 +1,4 @@
-export function validateNumberTestModule(fn: Function) {
+export function validateNumberTestModule(fn: (number: number) => any) {
   describe('validateNumberTestModule', () => {
     describe('[Bad]', () => {
       test('cannot input negative integer', () => {
