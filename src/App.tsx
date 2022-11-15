@@ -5,7 +5,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-import { Home } from './screens/home';
+import { Home } from './pages/home';
 
 function App() {
   return (
