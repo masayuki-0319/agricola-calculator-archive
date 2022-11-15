@@ -1,6 +1,6 @@
 export type ScoreResource = {
   farm: FarmResource;
-  products: ProductResource;
+  products: ProductsResource;
   family: FamilyResource;
   card: CardResource;
 };
@@ -12,7 +12,7 @@ export type FarmResource = {
   fancedStable: number;
 };
 
-export type ProductResource = {
+export type ProductsResource = {
   grain: number;
   vegetables: number;
   sheep: number;

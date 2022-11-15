@@ -1,4 +1,4 @@
-import { ProductResource } from '../../types';
+import { ProductsResource } from '../../types';
 import {
   calculateGrain,
   calculateVegetables,
@@ -7,7 +7,7 @@ import {
   calculateCattle,
 } from '../baseScore/products';
 
-export function calculateProducts(products: ProductResource): number {
+export function calculateProducts(products: ProductsResource): number {
   const { grain, vegetables, sheep, wildBoar, cattle } = products;
 
   const result =
