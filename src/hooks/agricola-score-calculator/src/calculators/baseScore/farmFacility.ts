@@ -1,4 +1,4 @@
-import { FarmResource } from '../../types';
+import { FarmFacilityResource } from '../../types';
 import {
   CoefficientResource,
   ScoreCoefficient,
@@ -42,7 +42,7 @@ const ROOM_COEFFICIENT = {
   },
 };
 
-export function calculateRoom(room: FarmResource['room']) {
+export function calculateRoom(room: FarmFacilityResource['room']) {
   validateNumber(room.count);
 
   const result = ROOM_COEFFICIENT.room[room.type] * room.count;

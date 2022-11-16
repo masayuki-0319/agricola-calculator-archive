@@ -1,4 +1,4 @@
-import { FarmResource } from '../../src';
+import { FarmFacilityResource } from '../../src';
 import {
   calculateField,
   calculatePastures,
@@ -110,7 +110,7 @@ describe('Test baseScore', () => {
 
     describe('[Fine]', () => {
       test('case 1', () => {
-        const fineInput: FarmResource['room'] = {
+        const fineInput: FarmFacilityResource['room'] = {
           type: 'wood',
           count: 2,
         };
@@ -120,7 +120,7 @@ describe('Test baseScore', () => {
       });
 
       test('case 2', () => {
-        const fineInput: FarmResource['room'] = {
+        const fineInput: FarmFacilityResource['room'] = {
           type: 'cray',
           count: 3,
         };
@@ -130,7 +130,7 @@ describe('Test baseScore', () => {
       });
 
       test('case 3', () => {
-        const fineInput: FarmResource['room'] = {
+        const fineInput: FarmFacilityResource['room'] = {
           type: 'stone',
           count: 4,
         };

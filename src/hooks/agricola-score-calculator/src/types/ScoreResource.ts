@@ -1,11 +1,11 @@
 export type ScoreResource = {
-  farm: FarmResource;
+  farm: FarmFacilityResource;
   products: ProductsResource;
   family: FamilyResource;
   card: CardResource;
 };
 
-export type FarmResource = {
+export type FarmFacilityResource = {
   field: number;
   pastures: number;
   emtpyFamyard: number;
