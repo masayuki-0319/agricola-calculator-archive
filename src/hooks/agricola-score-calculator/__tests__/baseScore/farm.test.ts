@@ -1,8 +1,10 @@
+import { FarmResource } from '../../src';
 import {
   calculateField,
   calculatePastures,
   calculateEmtpyFamyard,
   calculateFancedStable,
+  calculateRoom,
 } from '../../src/calculators/baseScore';
 import { baseScoreTest } from '../util/baseScoreTestModule';
 
@@ -101,5 +103,59 @@ describe('Test baseScore', () => {
     ];
 
     baseScoreTest(testFunction, testCases);
+  });
+
+  describe('calculateRoom:', () => {
+    const testFunction = calculateRoom;
+
+    describe('[Fine]', () => {
+      test('case 1', () => {
+        const fineInput: FarmResource['room'] = {
+          type: 'wood',
+          count: 2,
+        };
+        const expectedOutput = 0;
+
+        expect(testFunction(fineInput)).toBe(expectedOutput);
+      });
+
+      test('case 2', () => {
+        const fineInput: FarmResource['room'] = {
+          type: 'cray',
+          count: 3,
+        };
+        const expectedOutput = 3;
+
+        expect(testFunction(fineInput)).toBe(expectedOutput);
+      });
+
+      test('case 3', () => {
+        const fineInput: FarmResource['room'] = {
+          type: 'stone',
+          count: 4,
+        };
+        const expectedOutput = 8;
+
+        expect(testFunction(fineInput)).toBe(expectedOutput);
+      });
+    });
+
+    describe('[Bad]', () => {
+      test('cannot input negative integer', () => {
+        const badCase = -1;
+
+        expect(() =>
+          testFunction({ type: 'cray', count: badCase })
+        ).toThrowError(Error);
+      });
+
+      test('cannot input float integer', () => {
+        const badCase = 1.5;
+
+        expect(() =>
+          testFunction({ type: 'cray', count: badCase })
+        ).toThrowError(Error);
+      });
+    });
   });
 });

@@ -1,3 +1,4 @@
+import { FarmResource } from '../../types';
 import {
   CoefficientResource,
   ScoreCoefficient,
@@ -29,6 +30,22 @@ export function calculateFancedStable(fancedStable: number) {
   validateNumber(fancedStable);
 
   const result = fancedStable * 1;
+
+  return result;
+}
+
+const ROOM_COEFFICIENT = {
+  room: {
+    wood: 0,
+    cray: 1,
+    stone: 2,
+  },
+};
+
+export function calculateRoom(room: FarmResource['room']) {
+  validateNumber(room.count);
+
+  const result = ROOM_COEFFICIENT.room[room.type] * room.count;
 
   return result;
 }

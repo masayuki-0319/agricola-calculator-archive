@@ -4,16 +4,18 @@ import {
   calculatePastures,
   calculateEmtpyFamyard,
   calculateFancedStable,
+  calculateRoom,
 } from '../baseScore/farm';
 
 export function calculateFarms(farm: FarmResource): number {
-  const { field, pastures, emtpyFamyard, fancedStable } = farm;
+  const { field, pastures, emtpyFamyard, fancedStable, room } = farm;
 
   const result =
     calculateField(field) +
     calculatePastures(pastures) +
     calculateEmtpyFamyard(emtpyFamyard) +
-    calculateFancedStable(fancedStable);
+    calculateFancedStable(fancedStable) +
+    calculateRoom(room);
 
   return result;
 }

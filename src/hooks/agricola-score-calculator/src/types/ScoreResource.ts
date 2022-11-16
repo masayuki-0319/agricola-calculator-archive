@@ -10,6 +10,10 @@ export type FarmResource = {
   pastures: number;
   emtpyFamyard: number;
   fancedStable: number;
+  room: {
+    type: 'wood' | 'cray' | 'stone';
+    count: number;
+  };
 };
 
 export type ProductsResource = {
@@ -21,10 +25,6 @@ export type ProductsResource = {
 };
 
 export type FamilyResource = {
-  room: {
-    type: 'wood' | 'cray' | 'stone';
-    count: number;
-  };
   familyMember: number;
   beggingCard: number;
 };
