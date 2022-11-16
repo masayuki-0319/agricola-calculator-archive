@@ -5,9 +5,9 @@ import {
   calculateEmtpyFamyard,
   calculateFancedStable,
   calculateRoom,
-} from '../baseScore/farm';
+} from '../baseScore/farmFacility';
 
-export function calculateFarms(farm: FarmResource): number {
+export function calculateFarmFacility(farm: FarmResource): number {
   const { field, pastures, emtpyFamyard, fancedStable, room } = farm;
 
   const result =
