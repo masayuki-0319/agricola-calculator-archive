@@ -1,5 +1,5 @@
 export type ScoreResource = {
-  farm: FarmFacilityResource;
+  farmFacility: FarmFacilityResource;
   products: ProductsResource;
   family: FamilyResource;
   card: CardResource;

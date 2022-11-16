@@ -6,10 +6,10 @@ import {
   calculateProducts,
 } from '../categoryScore';
 
-export function calculateResult(scoreResource: ScoreResource): number {
-  const { farm, family, card, products } = scoreResource;
+export function calculateAllScore(scoreResource: ScoreResource): number {
+  const { farmFacility, family, card, products } = scoreResource;
 
-  const farmFacilityScore = calculateFarmFacility(farm);
+  const farmFacilityScore = calculateFarmFacility(farmFacility);
   const familyScore = calculateFamily(family);
   const cardScore = calculateCard(card);
   const productsScore = calculateProducts(products);
