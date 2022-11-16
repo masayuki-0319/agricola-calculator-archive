@@ -1,5 +1,5 @@
 import { FamilyResource } from '../../types';
-import { validateNumber } from '../../util/validateNumber';
+import { validateNumber } from '../util/validateNumber';
 
 const FAMILY_COEFFICIENT = {
   familyMember: 3,

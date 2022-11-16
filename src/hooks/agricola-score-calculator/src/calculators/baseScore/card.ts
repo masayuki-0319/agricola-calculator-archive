@@ -1,4 +1,4 @@
-import { validateNumber } from '../../util/validateNumber';
+import { validateNumber } from '../util/validateNumber';
 
 export function calculateCardBasePoint(basePoint: number) {
   validateNumber(basePoint);

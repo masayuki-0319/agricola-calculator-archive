@@ -3,8 +3,8 @@ import {
   CoefficientResource,
   ScoreCoefficient,
   scoreGenerator,
-} from '../../util/scoreCofficient';
-import { validateNumber } from '../../util/validateNumber';
+} from '../util/scoreCofficient';
+import { validateNumber } from '../util/validateNumber';
 
 export function calculateField(field: number) {
   const result = calculateFarm(field, 'field');

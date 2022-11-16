@@ -2,8 +2,8 @@ import {
   CoefficientResource,
   ScoreCoefficient,
   scoreGenerator,
-} from '../../util/scoreCofficient';
-import { validateNumber } from '../../util/validateNumber';
+} from '../util/scoreCofficient';
+import { validateNumber } from '../util/validateNumber';
 
 type Product = 'grain' | 'vegetables' | 'sheep' | 'wildBoar' | 'cattle';
 const GRAIN_SCORE_UNIT: CoefficientResource = [0, 1, 4, 6, 7];
