@@ -8,18 +8,4 @@ describe('Core test calculateCard', () => {
       expect(calculateCard(fineInput)).toBe(2);
     });
   });
-
-  describe('Bad:', () => {
-    test('basePoint is negative integer', () => {
-      const badInput = { basePoint: -1, endBonus: 1 };
-
-      expect(() => calculateCard(badInput)).toThrowError(Error);
-    });
-
-    test('endBonus is float integer', () => {
-      const badInput = { basePoint: 1, endBonus: 0.1 };
-
-      expect(() => calculateCard(badInput)).toThrowError(Error);
-    });
-  });
 });
