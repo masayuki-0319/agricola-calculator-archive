@@ -1,4 +1,4 @@
-import { ProductsResource } from '../../types';
+import type { ProductsResource } from '../../types';
 import {
   calculateGrain,
   calculateVegetables,

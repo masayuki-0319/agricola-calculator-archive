@@ -1,4 +1,4 @@
-import { FarmFacilityResource } from '../../types';
+import type { FarmFacilityResource } from '../../types';
 import {
   CoefficientResource,
   ScoreCoefficient,

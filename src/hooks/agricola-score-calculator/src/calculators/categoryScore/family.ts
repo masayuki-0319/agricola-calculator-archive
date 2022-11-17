@@ -1,4 +1,4 @@
-import { FamilyResource } from '../../types';
+import type { FamilyResource } from '../../types';
 import {
   calculateFamilyMember,
   calculateBeggingCard,

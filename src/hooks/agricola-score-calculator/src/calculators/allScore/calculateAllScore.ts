@@ -1,4 +1,4 @@
-import { ScoreResource } from '../../types';
+import type { ScoreResource } from '../../types';
 import {
   calculateFamily,
   calculateCard,

@@ -1,4 +1,4 @@
-import { CardResource } from '../../types';
+import type { CardResource } from '../../types';
 import { calculateCardBasePoint, calculateCardEndBonus } from '../baseScore';
 
 export function calculateCard(card: CardResource): number {
