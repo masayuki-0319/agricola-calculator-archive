@@ -1,6 +1,6 @@
 type InputBaseScoreProps = {
   scoreTitle: string;
-  input: any;
+  input: number;
   score: number;
   onUpdateScore: Function;
 };
