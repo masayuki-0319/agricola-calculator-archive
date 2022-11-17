@@ -1,8 +1,10 @@
+import React from 'react';
+
 type InputBaseScoreProps = {
   scoreTitle: string;
   input: number;
   score: number;
-  onUpdateScore: Function;
+  onUpdateScore: (count: 1 | -1) => void;
 };
 
 export const InputBaseScore: React.FC<InputBaseScoreProps> = (props) => {
@@ -18,3 +20,4 @@ export const InputBaseScore: React.FC<InputBaseScoreProps> = (props) => {
     </>
   );
 };
+// InputBaseScore.propTypes = InputBaseScoreProps;

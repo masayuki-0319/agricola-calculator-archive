@@ -8,7 +8,7 @@ const FAMILY_COEFFICIENT = {
 
 export function calculateFamilyMember(
   familyMember: FamilyResource['familyMember']
-) {
+): number {
   validateNumber(familyMember);
 
   const result = FAMILY_COEFFICIENT.familyMember * familyMember;
@@ -18,7 +18,7 @@ export function calculateFamilyMember(
 
 export function calculateBeggingCard(
   beggingCard: FamilyResource['beggingCard']
-) {
+): number {
   validateNumber(beggingCard);
 
   const result = FAMILY_COEFFICIENT.beggingCard * beggingCard;

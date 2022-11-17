@@ -1,8 +1,10 @@
 import { useState } from 'react';
 
-export const useBaseScoreState = (
-  calculator: Function
-): [number, number, Function] => {
+type UseBaseScoreState = (
+  calculator: (arg: number) => number
+) => [number, number, (count: 1 | -1) => void];
+
+export const useBaseScoreState: UseBaseScoreState = (calculator) => {
   const [input, setInput] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
 

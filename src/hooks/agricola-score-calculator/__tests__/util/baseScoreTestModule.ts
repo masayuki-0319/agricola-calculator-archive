@@ -2,11 +2,11 @@ import { singleParametersTest, TestCase } from './singleParametersTestModule';
 import { validateNumberTestModule } from './validateNumberTestModule';
 
 export function baseScoreTest(
-  testFunction: (number: number) => number,
+  testFunction: (args: number) => number,
   fineTestCases: TestCase[]
 ) {
   describe('[Fine]', () => {
-    singleParametersTest(testFunction, fineTestCases);
+    return singleParametersTest(testFunction, fineTestCases);
   });
 
   describe('[Bad]', () => {

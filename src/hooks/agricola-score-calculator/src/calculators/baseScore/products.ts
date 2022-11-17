@@ -39,31 +39,31 @@ function _calculateProducts(resultCount: number, product: Product) {
   }
 }
 
-export function calculateGrain(grain: number) {
+export function calculateGrain(grain: number): number {
   const result = _calculateProducts(grain, 'grain');
 
   return result;
 }
 
-export function calculateVegetables(vegetables: number) {
+export function calculateVegetables(vegetables: number): number {
   const result = _calculateProducts(vegetables, 'vegetables');
 
   return result;
 }
 
-export function calculateSheep(sheep: number) {
+export function calculateSheep(sheep: number): number {
   const result = _calculateProducts(sheep, 'sheep');
 
   return result;
 }
 
-export function calculateWildBoar(wildBoar: number) {
+export function calculateWildBoar(wildBoar: number): number {
   const result = _calculateProducts(wildBoar, 'wildBoar');
 
   return result;
 }
 
-export function calculateCattle(cattle: number) {
+export function calculateCattle(cattle: number): number {
   const result = _calculateProducts(cattle, 'cattle');
 
   return result;

@@ -6,19 +6,19 @@ import {
 } from '../util/scoreCofficient';
 import { validateNumber } from '../util/validateNumber';
 
-export function calculateField(field: number) {
+export function calculateField(field: number): number {
   const result = calculateFarm(field, 'field');
 
   return result;
 }
 
-export function calculatePastures(pastures: number) {
+export function calculatePastures(pastures: number): number {
   const result = calculateFarm(pastures, 'pastures');
 
   return result;
 }
 
-export function calculateEmtpyFamyard(emtpyFamyard: number) {
+export function calculateEmtpyFamyard(emtpyFamyard: number): number {
   validateNumber(emtpyFamyard);
 
   const result = emtpyFamyard * -1;
@@ -26,7 +26,7 @@ export function calculateEmtpyFamyard(emtpyFamyard: number) {
   return result;
 }
 
-export function calculateFancedStable(fancedStable: number) {
+export function calculateFancedStable(fancedStable: number): number {
   validateNumber(fancedStable);
 
   const result = fancedStable * 1;
@@ -42,7 +42,7 @@ const ROOM_COEFFICIENT = {
   },
 };
 
-export function calculateRoom(room: FarmFacilityResource['room']) {
+export function calculateRoom(room: FarmFacilityResource['room']): number {
   validateNumber(room.count);
 
   const result = ROOM_COEFFICIENT.room[room.type] * room.count;
@@ -59,7 +59,7 @@ const FARM_COEFFICIENT: { [P in Farm]: ScoreCoefficient } = {
   pastures: scoreGenerator(PASTURES_UNIT),
 };
 
-function calculateFarm(resultCount: number, farm: Farm) {
+function calculateFarm(resultCount: number, farm: Farm): number {
   validateNumber(resultCount);
   const coefficient = FARM_COEFFICIENT[farm];
 

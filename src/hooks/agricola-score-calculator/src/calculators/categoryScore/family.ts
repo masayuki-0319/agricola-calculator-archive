@@ -1,8 +1,5 @@
 import type { FamilyResource } from '../../types';
-import {
-  calculateFamilyMember,
-  calculateBeggingCard,
-} from '../baseScore/family';
+import { calculateFamilyMember, calculateBeggingCard } from '../baseScore/family';
 
 export function calculateFamily(family: FamilyResource): number {
   const { familyMember, beggingCard } = family;
