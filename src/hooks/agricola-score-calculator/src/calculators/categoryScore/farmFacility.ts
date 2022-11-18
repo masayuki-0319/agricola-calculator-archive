@@ -1,4 +1,3 @@
-import type { FarmFacilityResource } from '../../types';
 import {
   calculateField,
   calculatePastures,
@@ -6,6 +5,8 @@ import {
   calculateFancedStable,
   calculateRoom,
 } from '../baseScore/farmFacility';
+
+import type { FarmFacilityResource } from '../../types';
 
 export function calculateFarmFacility(farm: FarmFacilityResource): number {
   const { field, pastures, emtpyFamyard, fancedStable, room } = farm;

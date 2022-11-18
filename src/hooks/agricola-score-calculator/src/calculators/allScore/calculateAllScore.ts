@@ -1,10 +1,11 @@
-import type { ScoreResource } from '../../types';
 import {
   calculateFamily,
   calculateCard,
   calculateFarmFacility,
   calculateProducts,
 } from '../categoryScore';
+
+import type { ScoreResource } from '../../types';
 
 export function calculateAllScore(scoreResource: ScoreResource): number {
   const { farmFacility, family, card, products } = scoreResource;

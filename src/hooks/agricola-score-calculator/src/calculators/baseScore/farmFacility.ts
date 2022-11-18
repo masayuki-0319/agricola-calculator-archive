@@ -1,10 +1,11 @@
-import type { FarmFacilityResource } from '../../types';
 import {
   CoefficientResource,
   ScoreCoefficient,
   scoreGenerator,
 } from '../util/scoreCofficient';
 import { validateNumber } from '../util/validateNumber';
+
+import type { FarmFacilityResource } from '../../types';
 
 export function calculateField(field: number): number {
   const result = calculateFarm(field, 'field');

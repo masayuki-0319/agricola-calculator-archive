@@ -2,7 +2,6 @@ import {
   calculateFamilyMember,
   calculateBeggingCard,
 } from '../../src/calculators/baseScore';
-
 import { baseScoreTest } from '../util/baseScoreTestModule';
 
 describe('Test baseScore', () => {
