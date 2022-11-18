@@ -20,4 +20,3 @@ export const InputBaseScore: React.FC<InputBaseScoreProps> = (props) => {
     </>
   );
 };
-// InputBaseScore.propTypes = InputBaseScoreProps;
