@@ -10,6 +10,9 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
   ],
   overrides: [],
   parser: '@typescript-eslint/parser',
@@ -33,7 +36,16 @@ module.exports = {
     'spaced-comment': 'error',
     quotes: ['error', 'single'],
     'no-duplicate-imports': 'error',
-
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+        varsIgnorePattern: '^_$',
+      },
+    ],
     // React Plugin
     // The following rules are made available via `eslint-plugin-react`.
     'react/display-name': 0,
@@ -54,6 +66,37 @@ module.exports = {
     'react/react-in-jsx-scope': 1,
     'react/self-closing-comp': 1,
     'react/wrap-multilines': 0,
+    //
+    //
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'parent',
+          'sibling',
+          'object',
+          'type',
+          'index',
+        ],
+        'newlines-between': 'always',
+        pathGroupsExcludedImportTypes: ['react', 'builtin'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+        pathGroups: [
+          {
+            pattern: '{react,react-dom/**,react-router-dom}',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
+            pattern: '@src/**',
+            group: 'parent',
+            position: 'before',
+          },
+        ],
+      },
+    ],
   },
   settings: {
     'import/resolver': {
